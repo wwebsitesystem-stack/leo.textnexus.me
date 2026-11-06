@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin · leo.textnexus.me</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/admin.css">
+</head>
+<body class="dash">
+
+<header class="topbar">
+  <div class="topbar-left">
+    <span class="brand-dot" aria-hidden="true"></span>
+    <span class="brand-name">leo.textnexus.me</span>
+    <span class="tag">Admin</span>
+  </div>
+  <div class="topbar-right">
+    <button id="refresh" class="btn small ghost" type="button">Refresh</button>
+    <div class="who">
+      <img id="avatar" alt="" width="30" height="30" hidden>
+      <span class="who-text">
+        <span id="who-name">Signed in</span>
+        <span id="who-email" class="who-email"></span>
+      </span>
+    </div>
+    <form method="POST" action="/auth/freebuff/signout">
+      <button class="btn small ghost" type="submit">Sign out</button>
+    </form>
+  </div>
+</header>
+
+<main class="dashboard">
+  <div id="error" class="error-banner" hidden></div>
+
+  <div class="dash-head">
+    <div>
+      <h1>Traffic overview</h1>
+      <p id="updated" class="muted small">Loading…</p>
+    </div>
+    <div class="controls">
+      <div class="segmented" role="group" aria-label="Date range">
+        <button type="button" data-days="1">24h</button>
+        <button type="button" data-days="7" class="active">7d</button>
+        <button type="button" data-days="30">30d</button>
+        <button type="button" data-days="0">All</button>
+      </div>
+      <label class="check">
+        <input type="checkbox" id="bots">
+        <span>Include bots</span>
+      </label>
+    </div>
+  </div>
+
+  <section class="kpis" id="kpis" aria-live="polite"></section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2>Visits per day</h2>
+      <div class="legend">
+        <span><i class="dot human"></i>People</span>
+        <span><i class="dot bot"></i>Bots</span>
+      </div>
+    </div>
+    <div id="chart" class="chart"><div class="skeleton"></div></div>
+  </section>
+
+  <section class="grid-2">
+    <div class="panel">
+      <div class="panel-head"><h2>Top pages</h2></div>
+      <ul id="pages" class="bars"></ul>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><h2>Countries</h2></div>
+      <ul id="countries" class="bars"></ul>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><h2>Referrers</h2></div>
+      <ul id="referrers" class="bars"></ul>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><h2>Devices &amp; browsers</h2></div>
+      <ul id="devices" class="bars"></ul>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2>Cloudflare zone traffic</h2>
+      <span id="cf-note" class="muted small"></span>
+    </div>
+    <div id="cloudflare"><div class="skeleton"></div></div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2>Recent visits</h2>
+      <div class="panel-actions">
+        <span id="live" class="live" hidden><i></i>live</span>
+        <a id="export" class="btn small ghost" href="/api/admin/visits.csv?days=7">Export CSV</a>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>When</th>
+            <th>Path</th>
+            <th>Where</th>
+            <th>Source</th>
+            <th>Device</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="visits"><tr><td colspan="6" class="empty">Loading…</td></tr></tbody>
+      </table>
+    </div>
+    <div class="pager">
+      <button id="newer" class="btn small ghost" type="button">&larr; Newer</button>
+      <span id="pageinfo" class="muted small"></span>
+      <button id="older" class="btn small ghost" type="button">Older &rarr;</button>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head"><h2>Access</h2></div>
+    <div id="access"><div class="skeleton"></div></div>
+  </section>
+</main>
+
+<div id="toast" class="toast" role="status" hidden></div>
+
+<script src="/admin.js" type="module"></script>
+</body>
+</html>
