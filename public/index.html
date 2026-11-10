@@ -3,53 +3,77 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Leo Rosas Aamot</title>
-<meta name="description" content="Leo Rosas Aamot — student, builder, and tinkerer from St. Paul, Minnesota.">
-<meta property="og:title" content="Leo Rosas Aamot">
-<meta property="og:description" content="Student, builder, and tinkerer from St. Paul, Minnesota.">
-<meta property="og:type" content="website">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/styles.css">
+<title>Site shut down · leo.textnexus.me</title>
+<meta name="description" content="leo.textnexus.me was shut down by the co-owner of Nexus for going against Nexus policy. Email web.solutions@textnexus.me if we made a mistake.">
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root {
+    color-scheme: dark;
+    --bg: #0b0d12;
+    --panel: #141821;
+    --line: #252b38;
+    --text: #e8ebf2;
+    --muted: #9aa3b5;
+    --bad: #ff5c6c;
+    --link: #8fb4ff;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    min-height: 100%;
+    display: grid;
+    place-items: center;
+    padding: 32px 20px;
+    background: radial-gradient(1100px 600px at 50% -10%, #1a2030, var(--bg) 60%);
+    color: var(--text);
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  main {
+    width: 100%;
+    max-width: 560px;
+    padding: 38px 34px;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: rgba(20, 24, 33, 0.92);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  }
+  .badge {
+    display: inline-block;
+    padding: 4px 11px;
+    border: 1px solid rgba(255, 92, 108, 0.45);
+    border-radius: 999px;
+    background: rgba(255, 92, 108, 0.12);
+    color: var(--bad);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  h1 {
+    margin: 18px 0 14px;
+    font-size: clamp(24px, 4.5vw, 32px);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+  p { margin: 0 0 14px; color: var(--muted); }
+  p:last-child { margin-bottom: 0; }
+  .lede { color: var(--text); font-size: 17px; }
+  a { color: var(--link); text-decoration: none; border-bottom: 1px solid rgba(143, 180, 255, 0.4); }
+  a:hover { border-bottom-color: var(--link); }
+  @media (max-width: 480px) {
+    main { padding: 28px 22px; }
+  }
+</style>
 </head>
-<body class="landing">
-<div class="glow" aria-hidden="true"></div>
-
-<header class="site-head">
-  <span class="brand">leo.textnexus.me</span>
-  <a class="pill" href="/admin">Owner area</a>
-</header>
-
+<body>
 <main>
-  <section class="hero">
-    <p class="eyebrow">St. Paul, Minnesota</p>
-    <h1>Leo Rosas Aamot</h1>
-    <p class="lede">Student, builder, and tinkerer. This is my corner of the internet — part workbench, part notebook.</p>
-    <div class="hero-actions">
-      <a class="btn" href="mailto:lrosasaamot001@stpaul.k12.mn.us">Say hello</a>
-      <a class="btn ghost" href="#about">More about me</a>
-    </div>
-  </section>
-
-  <section id="about" class="cards">
-    <article class="card">
-      <h2>What I'm into</h2>
-      <p>Web projects, small tools that solve real problems, and figuring out how things work by taking them apart.</p>
-    </article>
-    <article class="card">
-      <h2>What I'm building</h2>
-      <p>A few experiments live here. The ones that survive tend to get polished into something other people can actually use.</p>
-    </article>
-    <article class="card">
-      <h2>How this site runs</h2>
-      <p>Built on Cloudflare Workers with an edge database. Static pages, no trackers, and a private dashboard for me.</p>
-    </article>
-  </section>
+  <div class="badge">Shut down</div>
+  <h1>This website has been shut down</h1>
+  <p class="lede">This website was shut down by the co-owner of Nexus due to this website going against Nexus policy.</p>
+  <p>Please email <a href="mailto:web.solutions@textnexus.me">web.solutions@textnexus.me</a> if we made a mistake.</p>
 </main>
-
-<footer class="site-foot">
-  <span>&copy; 2026 Leo Rosas Aamot</span>
-  <span>Built on Cloudflare</span>
-</footer>
-
 </body>
 </html>
